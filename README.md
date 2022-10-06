@@ -3,7 +3,7 @@
 1. Create the table `institution` that will have a relationship with the table `employee`
    (use foreign key), to show the studies from an employee. Take a screenshot from the
    new Entity-Relationship Diagram.  
-   ```roomsql
+   ```sql
    CREATE TABLE institution (
        idInstitution INT AUTO_INCREMENT PRIMARY KEY,
        instName VARCHAR(45) NOT NULL,
@@ -24,7 +24,7 @@
    </p>
 
 2. Use the Join Clause to get the data from the tables `institution` and `employee`.  
-   ```roomsql
+   ```sql
    SELECT e.firstName as Employee, i.instName as Institution
    FROM institution i
    INNER JOIN employee e on i.idInstitution = e.idInstitution;
@@ -35,7 +35,7 @@
    
 3. Use Sub-Queries to get the data from the children whose parents work in PriceSmart
    (*idCompany* = 5). Note: Get the data only from the table `children`.
-   ```roomsql
+   ```sql
    SELECT * FROM children
    WHERE idEmployee IN (
        SELECT idEmployee FROM employee
